@@ -1,0 +1,27 @@
+.DS_Store
+*~
+*.swp
+*.bak*
+
+# build products
+*.o
+*.a
+*.mod
+*.f90
+*.lst
+bin/
+src/spdyn/spdyn
+
+# autotools
+configure
+aclocal.m4
+autom4te.cache/
+Makefile
+Makefile.in
+config.log
+config.status
+src/config.h
+src/config.h.in
+src/stamp-h1
+.deps/
+.dirstamp

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+make clean
+rm -f src/spdyn/Makefile
+rm -f src/spdyn/Makefile.in
+rm -f src/lib/Makefile
+rm -f src/lib/Makefile.in
+rm -f src/Makefile
+rm -f src/Makefile.in
+rm -f Makefile
+rm -f Makefile.in
+rm -f aclocal.m4
+rm -f src/config.h
+rm -f src/config.h.in
+rm -f src/stamp-h1
+rm -f config.log
+rm -f config.status
+rm -f configure
+rm -rf autom4te.cache
+rm -rf src/lib/.deps src/lib/dSFMT/.deps src/spdyn/.deps
+rm -f src/lib/dSFMT/.dirstamp
+find . -name "*~" | xargs rm -f

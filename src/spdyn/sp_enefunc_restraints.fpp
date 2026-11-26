@@ -151,7 +151,7 @@ contains
           write(MsgOut,'(A,I5)') ' # of distances  = ', enefunc%restraint_funcgrp(i)/2
           write(MsgOut,'(A)')    ' distancelist: '
           do j = 1, enefunc%restraint_funcgrp(i)/2
-            write(MsgOut,'(" group = (",i3,",",i3,")"$)')                 &
+            write(MsgOut,'(" group = (",i3,",",i3,")",$)')                 &
                            enefunc%restraint_grouplist(2*j-1,i),          &
                            enefunc%restraint_grouplist(2*j,i)
             write(MsgOut,'(" weight = ",f8.3," exponent = ",i5,$)')       &
@@ -168,7 +168,7 @@ contains
           write(MsgOut,'(A,I5)') ' # of angles     = ', enefunc%restraint_funcgrp(i)/3
           write(MsgOut,'(A)')    ' anglelist   : '
           do j = 1, enefunc%restraint_funcgrp(i)/3
-            write(MsgOut,'(" group = (",i3,",",i3,",",i3,")"$)')          &
+            write(MsgOut,'(" group = (",i3,",",i3,",",i3,")",$)')          &
                            enefunc%restraint_grouplist(3*j-2,i),          &
                            enefunc%restraint_grouplist(3*j-1,i),          &
                            enefunc%restraint_grouplist(3*j,i)
@@ -183,7 +183,7 @@ contains
           write(MsgOut,'(A,I5)') ' # of dihedrals  = ', enefunc%restraint_funcgrp(i)/4
           write(MsgOut,'(A)')    ' dihedrallist: ' 
           do j = 1, enefunc%restraint_funcgrp(i)/4
-            write(MsgOut,'(" group = (",i3,",",i3,",",i3,",",i3,")"$)')   &
+            write(MsgOut,'(" group = (",i3,",",i3,",",i3,",",i3,")",$)')   &
                            enefunc%restraint_grouplist(4*j-3,i),          &
                            enefunc%restraint_grouplist(4*j-2,i),          &
                            enefunc%restraint_grouplist(4*j-1,i),          &
@@ -201,7 +201,7 @@ contains
           write(MsgOut,'(A)')    ' distancelist: '
           do j = 1, enefunc%restraint_funcgrp(i)
             do k = j+1, enefunc%restraint_funcgrp(i)
-              write(MsgOut,'(" group = (",i3,",",i3,")"$)')               &
+              write(MsgOut,'(" group = (",i3,",",i3,")",$)')               &
                              enefunc%restraint_grouplist(j,i),            &
                              enefunc%restraint_grouplist(k,i)
               write(MsgOut,'(A)') ''
@@ -218,7 +218,7 @@ contains
           write(MsgOut,'(A)')    ' distancelist: '
           do j = 1, enefunc%restraint_funcgrp(i)
             do k = j+1, enefunc%restraint_funcgrp(i)
-              write(MsgOut,'(" group = (",i3,",",i3,")"$)')               &
+              write(MsgOut,'(" group = (",i3,",",i3,")",$)')               &
                              enefunc%restraint_grouplist(j,i),            &
                              enefunc%restraint_grouplist(k,i)
               write(MsgOut,'(A)') ''

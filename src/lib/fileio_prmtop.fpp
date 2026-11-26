@@ -1775,6 +1775,7 @@ contains
 
         else if (keyword .eq. 'DIHEDRAL_PERIODICITY') then
           read(line(start:end),fmt10) prmtop%dihe_perio_uniq(count)
+          prmtop%dihe_perio_uniq(count) = abs(prmtop%dihe_perio_uniq(count))
 
         else if (keyword .eq. 'DIHEDRAL_PHASE') then
           read(line(start:end),fmt10) prmtop%dihe_phase_uniq(count)

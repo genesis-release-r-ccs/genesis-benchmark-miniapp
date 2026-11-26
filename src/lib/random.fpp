@@ -68,6 +68,8 @@ contains
 
     call get_size_of_dsfmt_t(dsfmt_size)
     allocate(g_dsfmt(dsfmt_size), g_dsfmt_stock(dsfmt_size))
+    g_dsfmt(:)       = achar(0)
+    g_dsfmt_stock(:) = achar(0)
 
     call dsfmt_init_gen_rand(g_dsfmt, iseed)
 

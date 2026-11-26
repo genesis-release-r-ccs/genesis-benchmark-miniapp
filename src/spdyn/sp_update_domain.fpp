@@ -99,7 +99,12 @@ contains
 
       pairlist%univ_update = 1
 
-      if (istep == update_period) then
+      ! allocate buffers for atom migration at the first update
+      !   (checked by allocation status instead of istep == update_period,
+      !    because the first call may come at a later step, e.g. RESPA with
+      !    nbupdate_period = elec_long_period)
+      !
+      if (.not. allocated(domain%ptl_exit)) then
 
         call alloc_domain(domain, DomainPtlMove, ncell+nb, ncell, 1)
         call alloc_domain(domain, DomainWaterMove, ncell+nb, ncell, &

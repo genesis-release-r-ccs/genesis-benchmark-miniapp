@@ -262,9 +262,9 @@ contains
           k = (iproc-1)*nlocalx
           do ix = 1, nlocalx
             work1(k+ix) = cmplx(qdf(ix,iy,  iz,iproc), &
-                                qdf(ix,iy+1,iz,iproc))
+                                qdf(ix,iy+1,iz,iproc), kind=wp)
             work3(k+ix) = cmplx(ldf(ix,iy,  iz,iproc), &
-                                ldf(ix,iy+1,iz,iproc))
+                                ldf(ix,iy+1,iz,iproc), kind=wp)
           end do
         end do
         call zfft1d(work1, nx, -1, work2)
@@ -750,9 +750,9 @@ contains
     do iz = 1, niz
       do iy = 1, nlocaly, 2
         work1(1) = cmplx(real(qdfxyz(1,iy,  iz,1),wp), &
-                         real(qdfxyz(1,iy+1,iz,1),wp))
+                         real(qdfxyz(1,iy+1,iz,1),wp), kind=wp)
         work3(1) = cmplx(real(ldfxyz(1,iy,  iz,1),wp), &
-                         real(ldfxyz(1,iy+1,iz,1),wp))
+                         real(ldfxyz(1,iy+1,iz,1),wp), kind=wp)
 !ocl norecurrence(work1,work3)
         do ix = 2, nix
           temp = (0.0_wp,1.0_wp)*qdfxyz(ix,iy+1,iz,1)
@@ -775,9 +775,9 @@ contains
           end do
         end do
         work1(nx/2+1) = cmplx(real(qdfxyz(nix1,iy,  iz,1),wp), &
-                              real(qdfxyz(nix1,iy+1,iz,1),wp))
+                              real(qdfxyz(nix1,iy+1,iz,1),wp), kind=wp)
         work3(nx/2+1) = cmplx(real(ldfxyz(nix1,iy,  iz,1),wp), &
-                              real(ldfxyz(nix1,iy+1,iz,1),wp))
+                              real(ldfxyz(nix1,iy+1,iz,1),wp), kind=wp)
         call zfft1d(work1, nx, 1, work2)
         call zfft1d(work3, nx, 1, work4)
         do iproc = 1, nprocx

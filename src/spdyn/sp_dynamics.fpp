@@ -334,24 +334,25 @@ contains
         write(MsgOut,'(A)') '  steered_md      =         no'
       end if
 
-      ! adjust barostat_period
-      !
-      if (mod(dyn_info%baro_period,dyn_info%thermo_period) /= 0) then
-        if (main_rank) &
-          write(MsgOut,'(A)') '  mod(barostat_period,thermostat_period) is not ZERO'
-        do while (.true.)
-          dyn_info%baro_period = dyn_info%baro_period + 1
-          if (mod(dyn_info%baro_period,dyn_info%thermo_period) == 0) exit
-        end do
-        if (main_rank) then
-          write(MsgOut,'(A)') '  we increase the barostat_period'
-          write(MsgOut,'(A20,I10)')  &
-            '  barostat_period = ', dyn_info%baro_period
-        end if
-      end if
-
       write(MsgOut,'(A)') ' '
 
+    end if
+
+    ! adjust barostat_period
+    !
+    if (mod(dyn_info%baro_period,dyn_info%thermo_period) /= 0) then
+      if (main_rank) &
+        write(MsgOut,'(A)') '  mod(barostat_period,thermostat_period) is not ZERO'
+      do while (.true.)
+        dyn_info%baro_period = dyn_info%baro_period + 1
+        if (mod(dyn_info%baro_period,dyn_info%thermo_period) == 0) exit
+      end do
+      if (main_rank) then
+        write(MsgOut,'(A)') '  we increase the barostat_period'
+        write(MsgOut,'(A20,I10)')  &
+          '  barostat_period = ', dyn_info%baro_period
+        write(MsgOut,'(A)') ' '
+      end if
     end if
 
     ! warning with leapfor integrator

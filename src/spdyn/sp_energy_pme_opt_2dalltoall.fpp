@@ -1363,7 +1363,7 @@ contains
       do iy = 1, niy
         do iz = 1, ngrid(3)
           ftqdf_work2(iz,iy,ix) = ftqdf_work2(iz,iy,ix) &
-                                 *cmplx(theta(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta(iz,iy,ix),0.0_wp,kind=wp)
         end do
       end do
     end do
@@ -1372,7 +1372,7 @@ contains
       do iy = id+1, niy, nthread
         do iz = 1, ngrid(3)
           ftqdf_work2(iz,iy,ix) = ftqdf_work2(iz,iy,ix) &
-                                 *cmplx(theta(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta(iz,iy,ix),0.0_wp,kind=wp)
         end do
       end do
     end if
@@ -1893,9 +1893,9 @@ contains
       do iy = 1, niy
         do iz = 1, ngrid(3)
           ftqdf_work2(iz,iy,ix) = ftqdf_work2(iz,iy,ix) &
-                                 *cmplx(theta(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta(iz,iy,ix),0.0_wp,kind=wp)
           ftldf_work2(iz,iy,ix) = ftldf_work2(iz,iy,ix) &
-                                 *cmplx(theta_lj(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta_lj(iz,iy,ix),0.0_wp,kind=wp)
         end do
       end do
     end do
@@ -1904,9 +1904,9 @@ contains
       do iy = id+1, niy, nthread
         do iz = 1, ngrid(3)
           ftqdf_work2(iz,iy,ix) = ftqdf_work2(iz,iy,ix) &
-                                 *cmplx(theta(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta(iz,iy,ix),0.0_wp,kind=wp)
           ftldf_work2(iz,iy,ix) = ftldf_work2(iz,iy,ix) &
-                                 *cmplx(theta_lj(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta_lj(iz,iy,ix),0.0_wp,kind=wp)
         end do
       end do
     end if
@@ -2389,7 +2389,7 @@ contains
       do iy = 1, niy
         do iz = 1, ngrid(3)
           ftqdf_work2(iz,iy,ix) = ftqdf_work2(iz,iy,ix) &
-                                 *cmplx(theta(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta(iz,iy,ix),0.0_wp,kind=wp)
         end do
       end do
     end do
@@ -2398,7 +2398,7 @@ contains
       do iy = id+1, niy, nthread
         do iz = 1, ngrid(3)
           ftqdf_work2(iz,iy,ix) = ftqdf_work2(iz,iy,ix) &
-                                 *cmplx(theta(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta(iz,iy,ix),0.0_wp,kind=wp)
         end do
       end do
     end if
@@ -2933,9 +2933,9 @@ contains
       do iy = 1, niy
         do iz = 1, ngrid(3)
           ftqdf_work2(iz,iy,ix) = ftqdf_work2(iz,iy,ix) &
-                                 *cmplx(theta(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta(iz,iy,ix),0.0_wp,kind=wp)
           ftldf_work2(iz,iy,ix) = ftldf_work2(iz,iy,ix) &
-                                 *cmplx(theta_lj(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta_lj(iz,iy,ix),0.0_wp,kind=wp)
         end do
       end do
     end do
@@ -2944,9 +2944,9 @@ contains
       do iy = id+1, niy, nthread
         do iz = 1, ngrid(3)
           ftqdf_work2(iz,iy,ix) = ftqdf_work2(iz,iy,ix) &
-                                 *cmplx(theta(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta(iz,iy,ix),0.0_wp,kind=wp)
           ftldf_work2(iz,iy,ix) = ftldf_work2(iz,iy,ix) &
-                                 *cmplx(theta_lj(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta_lj(iz,iy,ix),0.0_wp,kind=wp)
         end do
       end do
     end if
@@ -3490,7 +3490,7 @@ contains
       do iy = 1, niy
         do iz = 1, ngrid(3)
           ftqdf_work2(iz,iy,ix) = ftqdf_work2(iz,iy,ix) &
-                                 *cmplx(theta(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta(iz,iy,ix),0.0_wp,kind=wp)
         end do
       end do
     end do
@@ -3499,7 +3499,7 @@ contains
       do iy = id+1, niy, nthread
         do iz = 1, ngrid(3)
           ftqdf_work2(iz,iy,ix) = ftqdf_work2(iz,iy,ix) &
-                                 *cmplx(theta(iz,iy,ix),0.0_wp)
+                                 *cmplx(theta(iz,iy,ix),0.0_wp,kind=wp)
         end do
       end do
     end if
